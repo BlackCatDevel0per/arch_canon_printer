@@ -113,14 +113,10 @@ function canon_uninstall() {
 		fi
 	fi
 	echo 'Removing driver packages'
-	dpkg --purge cndrvcups-capt
-	dpkg --purge cndrvcups-common
-	echo 'Removing unused libraries and packages'
-	apt-get -y autoremove
+	pacman -R capt-src
+	echo 'You can remove "libglade" dependency of "capt-src" package in your package manager'
 	echo 'Deleting settings'
-	[ -f /etc/init/ccpd-start.conf ] && rm /etc/init/ccpd-start.conf
-	[ -f /etc/udev/rules.d/85-canon-capt.rules ] && rm /etc/udev/rules.d/85-canon-capt.rules
-	[ -f "${XDG_DESKTOP_DIR}/captstatusui.desktop" ] && rm "${XDG_DESKTOP_DIR}/captstatusui.desktop"
+	[ -f /etc/udev/rules.d/99-printer.rules ] && rm /etc/udev/rules.d/99-printer.rules
 	[ -f /usr/bin/autoshutdowntool ] && rm /usr/bin/autoshutdowntool
 	[ $INIT_SYSTEM == 'systemd' ] && update-rc.d -f ccpd remove
 	echo 'Uninstall completed'

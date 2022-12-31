@@ -1,3 +1,5 @@
+# Scripting for arch in plans.. Now you can see [this](https://forum.manjaro.org/t/canon-6020-manjaro/28583/7) and [this](https://archlinux.org.ru/forum/topic/20305/?page=1#post-236530)
+
 ## Canon LBP printers drivers installer for Ubuntu
 Script for installing the Linux CAPT Printer Driver for Canon LBP printers on Ubuntu (both 32-bit and 64-bit)
 ### Install
